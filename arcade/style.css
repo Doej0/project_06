@@ -1,0 +1,50 @@
+* {
+  margin: 0 auto;
+  background-color: #ead3c1;
+  box-sizing: border-box;
+  font-family: "Luckiest Guy", cursive;
+}
+
+#grid {
+  display: grid;
+  grid-template-areas:
+    "title title"
+    "stats player"
+    "board board"
+    "ctrls ctrls";
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+#title {
+  grid-area: title;
+}
+
+#player {
+  grid-area: player;
+}
+#stats {
+  grid-area: stats;
+}
+#board {
+  grid-area: board;
+}
+#controls {
+  grid-area: ctrls;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#title {
+  font-size: 3rem;
+  font-weight: 590;
+  color: #2b0011;
+  margin-top: 20px;
+}
+
+#player{ margin-right: 18px;}
+#stats{ align-self: center;}
