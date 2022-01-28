@@ -8,13 +8,14 @@
 #grid {
   display: grid;
   grid-template-areas:
-    "title title"
-    "stats player"
-    "board board"
-    "ctrls ctrls";
+    "title"
+    "stats"
+    "player"
+    "board"
+    "ctrls";
 
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto;
 }
 
 #title {
