@@ -11,6 +11,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "course_work"
+		"liveServer.settings.multiRootWorkspaceName": "course_work",
+		"git.ignoreLimitWarning": true
 	}
 }

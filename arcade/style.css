@@ -1,51 +1,146 @@
-* {
-  margin: 0 auto;
-  background-color: #ead3c1;
-  box-sizing: border-box;
-  font-family: "Luckiest Guy", cursive;
+html {
+    line-height: 1.4;
+    font-size: 100%;
+    color: rgba(12, 12, 10, 0.8);
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    font-family: "Luckiest Guy", cursive;
 }
 
-#grid {
-  display: grid;
-  grid-template-areas:
-    "title"
-    "stats"
-    "player"
-    "board"
-    "ctrls";
+body {
+    background-color: #ead3c1;
+}
 
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
+main {
+    max-width: 768px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    row-gap: 1em;
+}
+
+h1 {
+  margin: 0;
+  text-transform: lowercase;
+  font-size: calc(2rem + 3vw);
+  font-weight: bold;
+}
+
+button {
+    display: inline-block;
+    appearance: none;
+    border: none;
+    border-radius: 5px;
+    background: #5FBAB0;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+button:hover {
+    background: #1d49aa;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+img, object, svg {
+    display: block;
+    max-width: 100%;
 }
 
 #title {
-  grid-area: title;
+    background-color: rgba(150, 11, 214, 1);
+    text-align: center;
+    border-radius: 25% 10%;
 }
 
-#player {
-  grid-area: player;
-}
 #stats {
-  grid-area: stats;
+    background-color: #5FBAB0;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 8px;
+    border-radius: 50% 20% / 10% 40%;
 }
-#board {
-  grid-area: board;
+
+.slot {
+    fill: rgba(200, 150, 245, 1);
 }
+
+.slot-bg {
+    fill:  rgba(232, 223, 245, 1);;
+}
+
+.slot:hover {
+    fill: rgba(200, 175, 244, 1);
+}
+
 #controls {
-  grid-area: ctrls;
+    display: grid;
+    grid-template-columns: 1fr 2fr auto 1fr auto 2fr 1fr;
+    column-gap: 0.5em;
 }
 
-img {
-  width: 100%;
-  height: auto;
+
+#player1 {
+    padding: 0.25em;
+    grid-column: 2 / 3;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    text-align: right;
+    background-color: #B12C00;
+    border-radius: 25px 25px 0px 100px;
 }
 
-#title {
-  font-size: 3rem;
-  font-weight: 590;
-  color: #2b0011;
-  margin-top: 20px;
+#play1 {
+    grid-column: 3 / 4;
+    display: none;
 }
 
-#player{ margin-right: 18px;}
-#stats{ align-self: center;}
+#reset {
+    grid-column: 4 / 5;
+    border-radius: 50% 20% / 10% 40%;
+}
+
+#play2 {
+    grid-column: 5 / 6;
+    display: none;
+}
+
+#player2 {
+    padding: 0.25em;
+    border-radius: 25px 25px 100px 0px;
+    grid-column: 6 / 7;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #4A817A;
+   
+}
+
+@keyframes glowing {
+        0% {
+          background-color: #2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+        50% {
+          background-color: #49e819;
+          box-shadow: 0 0 20px #49e819;
+        }
+        100% {
+          background-color: #2ba805;
+          box-shadow: 0 0 5px #2ba805;
+        }
+      }
+
+#player2 {
+    animation: glowing 1300ms infinite;
+}
